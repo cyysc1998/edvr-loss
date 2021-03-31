@@ -194,8 +194,8 @@ def train(args):
                     #     label_one_hot1[idx, label1[idx]] = 1
                     #     label_one_hot2[idx, label2[idx]] = 1
 
-                    label_one_hot1 = torch.from_numpy(label_one_hot1.astype(np.float32))
-                    label_one_hot2 = torch.from_numpy(label_one_hot2.astype(np.float32))
+                    # label_one_hot1 = torch.from_numpy(label_one_hot1.astype(np.float32))
+                    # label_one_hot2 = torch.from_numpy(label_one_hot2.astype(np.float32))
 
                     label_one_hot1 = torch.rand(batch_size, 16)
                     label_one_hot2 = torch.rand(batch_size, 16)

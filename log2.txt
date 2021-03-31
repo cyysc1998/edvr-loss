@@ -1,0 +1,467 @@
+nohup: ignoring input
+ConsNet(
+  (dgcnn): DGCNN(
+    (transform_net): Transform_Net(
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (bn3): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv1): Sequential(
+        (0): Conv2d(6, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.2)
+      )
+      (conv2): Sequential(
+        (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.2)
+      )
+      (conv3): Sequential(
+        (0): Conv1d(128, 1024, kernel_size=(1,), stride=(1,), bias=False)
+        (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.2)
+      )
+      (linear1): Linear(in_features=1024, out_features=512, bias=False)
+      (linear2): Linear(in_features=512, out_features=256, bias=False)
+      (bn4): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (transform): Linear(in_features=256, out_features=9, bias=True)
+    )
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (bn3): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (bn4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (bn5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (bn6): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (bn7): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (bn8): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (bn9): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (bn10): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv1): Sequential(
+      (0): Conv2d(6, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (conv2): Sequential(
+      (0): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (conv3): Sequential(
+      (0): Conv2d(128, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (conv4): Sequential(
+      (0): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (conv5): Sequential(
+      (0): Conv2d(128, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (conv6): Sequential(
+      (0): Conv1d(192, 1024, kernel_size=(1,), stride=(1,), bias=False)
+      (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (conv7): Sequential(
+      (0): Conv1d(16, 64, kernel_size=(1,), stride=(1,), bias=False)
+      (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (conv8): Sequential(
+      (0): Conv1d(1280, 256, kernel_size=(1,), stride=(1,), bias=False)
+      (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+  )
+  (decoder): DenseNet(
+    (model): Sequential(
+      (Denselayer0): _DenseLayer(
+        (norm1): AdaptiveInstanceNorm2d(256)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv1d(256, 512, kernel_size=(1,), stride=(1,), bias=False)
+        (norm2): AdaptiveInstanceNorm2d(512)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv1d(512, 128, kernel_size=(1,), stride=(1,), bias=False)
+      )
+      (Denselayer1): _DenseLayer(
+        (norm1): AdaptiveInstanceNorm2d(384)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv1d(384, 512, kernel_size=(1,), stride=(1,), bias=False)
+        (norm2): AdaptiveInstanceNorm2d(512)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv1d(512, 128, kernel_size=(1,), stride=(1,), bias=False)
+      )
+      (Denselayer2): _DenseLayer(
+        (norm1): AdaptiveInstanceNorm2d(512)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv1d(512, 512, kernel_size=(1,), stride=(1,), bias=False)
+        (norm2): AdaptiveInstanceNorm2d(512)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv1d(512, 128, kernel_size=(1,), stride=(1,), bias=False)
+      )
+    )
+  )
+  (mlp_w): MLP(
+    (model): Sequential(
+      (0): LinearBlock(
+        (fc): Linear(in_features=2048, out_features=256, bias=True)
+        (norm): InstanceNorm1d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+        (activation): ReLU(inplace=True)
+        (dp): Dropout(p=0.5, inplace=False)
+      )
+      (1): LinearBlock(
+        (fc): Linear(in_features=256, out_features=256, bias=True)
+        (norm): InstanceNorm1d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+        (activation): ReLU(inplace=True)
+        (dp): Dropout(p=0.5, inplace=False)
+      )
+      (2): LinearBlock(
+        (fc): Linear(in_features=256, out_features=2688, bias=True)
+        (dp): Dropout(p=0.5, inplace=False)
+      )
+    )
+  )
+  (mlp_b): MLP(
+    (model): Sequential(
+      (0): LinearBlock(
+        (fc): Linear(in_features=2048, out_features=256, bias=True)
+        (norm): InstanceNorm1d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+        (activation): ReLU(inplace=True)
+        (dp): Dropout(p=0.5, inplace=False)
+      )
+      (1): LinearBlock(
+        (fc): Linear(in_features=256, out_features=256, bias=True)
+        (norm): InstanceNorm1d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+        (activation): ReLU(inplace=True)
+        (dp): Dropout(p=0.5, inplace=False)
+      )
+      (2): LinearBlock(
+        (fc): Linear(in_features=256, out_features=2688, bias=True)
+        (dp): Dropout(p=0.5, inplace=False)
+      )
+    )
+  )
+  (conv): Conv1d(640, 3, kernel_size=(1,), stride=(1,))
+)
+Use SGD
+Use COS
+Use Chamfer Distance
+Experiment: exp_single_chamfer_0.0004_trans
+Begin to train...
+=====================================Epoch 0========================================
+*****Train*****
+iters 99, tarin loss: 0.713557
+iters 199, tarin loss: 0.632392
+iters 299, tarin loss: 0.585747
+iters 399, tarin loss: 0.550887
+iters 499, tarin loss: 0.526746
+iters 599, tarin loss: 0.509773
+iters 699, tarin loss: 0.495815
+iters 799, tarin loss: 0.484374
+Learning rate: 0.001000
+*****Test*****
+Train loss: 0.474567, Test loss: 0.380244
+=====================================Epoch 1========================================
+*****Train*****
+iters 99, tarin loss: 0.527245
+iters 199, tarin loss: 0.497014
+iters 299, tarin loss: 0.478554
+iters 399, tarin loss: 0.470666
+iters 499, tarin loss: 0.458103
+iters 599, tarin loss: 0.451629
+iters 699, tarin loss: 0.444788
+iters 799, tarin loss: 0.436954
+Learning rate: 0.003250
+*****Test*****
+Train loss: 0.430372, Test loss: 0.370789
+=====================================Epoch 2========================================
+*****Train*****
+iters 99, tarin loss: 0.422122
+iters 199, tarin loss: 0.418079
+iters 299, tarin loss: 0.406282
+iters 399, tarin loss: 0.399564
+iters 499, tarin loss: 0.391155
+iters 599, tarin loss: 0.382530
+iters 699, tarin loss: 0.375783
+iters 799, tarin loss: 0.369869
+Learning rate: 0.005500
+*****Test*****
+Train loss: 0.366630, Test loss: 0.381894
+=====================================Epoch 3========================================
+*****Train*****
+iters 99, tarin loss: 0.344078
+iters 199, tarin loss: 0.345401
+iters 299, tarin loss: 0.336686
+iters 399, tarin loss: 0.335204
+iters 499, tarin loss: 0.331503
+iters 599, tarin loss: 0.329448
+iters 699, tarin loss: 0.327670
+iters 799, tarin loss: 0.326239
+Learning rate: 0.007750
+*****Test*****
+Train loss: 0.323272, Test loss: 0.462707
+=====================================Epoch 4========================================
+*****Train*****
+iters 99, tarin loss: 0.334723
+iters 199, tarin loss: 0.339071
+iters 299, tarin loss: 0.329609
+iters 399, tarin loss: 0.325058
+iters 499, tarin loss: 0.318882
+iters 599, tarin loss: 0.317486
+iters 699, tarin loss: 0.313958
+iters 799, tarin loss: 0.311574
+Learning rate: 0.010000
+*****Test*****
+Train loss: 0.310302, Test loss: 0.304730
+=====================================Epoch 5========================================
+*****Train*****
+iters 99, tarin loss: 0.868207
+iters 199, tarin loss: 0.659558
+iters 299, tarin loss: 0.563217
+iters 399, tarin loss: 0.505808
+iters 499, tarin loss: 0.466725
+iters 599, tarin loss: 0.438856
+iters 699, tarin loss: 0.418444
+iters 799, tarin loss: 0.401742
+Learning rate: 0.039760
+*****Test*****
+Train loss: 0.391275, Test loss: 0.287022
+=====================================Epoch 6========================================
+*****Train*****
+iters 99, tarin loss: 0.288562
+iters 199, tarin loss: 0.282155
+iters 299, tarin loss: 0.279372
+iters 399, tarin loss: 0.275990
+iters 499, tarin loss: 0.274722
+iters 599, tarin loss: 0.273528
+iters 699, tarin loss: 0.272264
+iters 799, tarin loss: 0.272411
+Learning rate: 0.039655
+*****Test*****
+Train loss: 0.270951, Test loss: 0.263610
+=====================================Epoch 7========================================
+*****Train*****
+iters 99, tarin loss: 0.269130
+iters 199, tarin loss: 0.271094
+iters 299, tarin loss: 0.266591
+iters 399, tarin loss: 0.263089
+iters 499, tarin loss: 0.262318
+iters 599, tarin loss: 0.260708
+iters 699, tarin loss: 0.260526
+iters 799, tarin loss: 0.259558
+Learning rate: 0.039530
+*****Test*****
+Train loss: 0.258015, Test loss: 0.271709
+=====================================Epoch 8========================================
+*****Train*****
+iters 99, tarin loss: 0.256124
+iters 199, tarin loss: 0.252248
+iters 299, tarin loss: 0.251143
+iters 399, tarin loss: 0.250752
+iters 499, tarin loss: 0.249626
+iters 599, tarin loss: 0.249129
+iters 699, tarin loss: 0.248246
+iters 799, tarin loss: 0.246930
+Learning rate: 0.039387
+*****Test*****
+Train loss: 0.246403, Test loss: 0.272985
+=====================================Epoch 9========================================
+*****Train*****
+iters 99, tarin loss: 0.246224
+iters 199, tarin loss: 0.242624
+iters 299, tarin loss: 0.240993
+iters 399, tarin loss: 0.239262
+iters 499, tarin loss: 0.239108
+iters 599, tarin loss: 0.238489
+iters 699, tarin loss: 0.238074
+iters 799, tarin loss: 0.238666
+Learning rate: 0.039226
+*****Test*****
+Train loss: 0.237986, Test loss: 0.242109
+=====================================Epoch 10========================================
+*****Train*****
+iters 99, tarin loss: 0.231802
+iters 199, tarin loss: 0.232643
+iters 299, tarin loss: 0.235163
+iters 399, tarin loss: 0.235788
+iters 499, tarin loss: 0.235805
+iters 599, tarin loss: 0.235298
+iters 699, tarin loss: 0.235348
+iters 799, tarin loss: 0.235151
+Learning rate: 0.039046
+*****Test*****
+Train loss: 0.234802, Test loss: 0.235424
+=====================================Epoch 11========================================
+*****Train*****
+iters 99, tarin loss: 0.229822
+iters 199, tarin loss: 0.231559
+iters 299, tarin loss: 0.231483
+iters 399, tarin loss: 0.230335
+iters 499, tarin loss: 0.230205
+iters 599, tarin loss: 0.229697
+iters 699, tarin loss: 0.229643
+iters 799, tarin loss: 0.230073
+Learning rate: 0.038847
+*****Test*****
+Train loss: 0.230051, Test loss: 0.245808
+=====================================Epoch 12========================================
+*****Train*****
+iters 99, tarin loss: 0.228692
+iters 199, tarin loss: 0.224660
+iters 299, tarin loss: 0.225604
+iters 399, tarin loss: 0.228193
+iters 499, tarin loss: 0.228959
+iters 599, tarin loss: 0.227689
+iters 699, tarin loss: 0.228300
+iters 799, tarin loss: 0.227104
+Learning rate: 0.038631
+*****Test*****
+Train loss: 0.226750, Test loss: 0.220574
+=====================================Epoch 13========================================
+*****Train*****
+iters 99, tarin loss: 0.229055
+iters 199, tarin loss: 0.226342
+iters 299, tarin loss: 0.223625
+iters 399, tarin loss: 0.223044
+iters 499, tarin loss: 0.222645
+iters 599, tarin loss: 0.222023
+iters 699, tarin loss: 0.222418
+iters 799, tarin loss: 0.222441
+Learning rate: 0.038396
+*****Test*****
+Train loss: 0.222349, Test loss: 0.282405
+=====================================Epoch 14========================================
+*****Train*****
+iters 99, tarin loss: 0.221353
+iters 199, tarin loss: 0.222013
+iters 299, tarin loss: 0.224023
+iters 399, tarin loss: 0.223239
+iters 499, tarin loss: 0.222582
+iters 599, tarin loss: 0.221693
+iters 699, tarin loss: 0.221131
+iters 799, tarin loss: 0.220888
+Learning rate: 0.038144
+*****Test*****
+Train loss: 0.220292, Test loss: 0.233100
+=====================================Epoch 15========================================
+*****Train*****
+iters 99, tarin loss: 0.225415
+iters 199, tarin loss: 0.219464
+iters 299, tarin loss: 0.218128
+iters 399, tarin loss: 0.219854
+iters 499, tarin loss: 0.221121
+iters 599, tarin loss: 0.220298
+iters 699, tarin loss: 0.220229
+iters 799, tarin loss: 0.219923
+Learning rate: 0.037875
+*****Test*****
+Train loss: 0.220278, Test loss: 0.221503
+=====================================Epoch 16========================================
+*****Train*****
+iters 99, tarin loss: 0.217318
+iters 199, tarin loss: 0.218010
+iters 299, tarin loss: 0.217729
+iters 399, tarin loss: 0.216925
+iters 499, tarin loss: 0.216605
+iters 599, tarin loss: 0.216449
+iters 699, tarin loss: 0.216159
+iters 799, tarin loss: 0.215689
+Learning rate: 0.037588
+*****Test*****
+Train loss: 0.215890, Test loss: 0.250170
+=====================================Epoch 17========================================
+*****Train*****
+iters 99, tarin loss: 0.216969
+iters 199, tarin loss: 0.219792
+iters 299, tarin loss: 0.218186
+iters 399, tarin loss: 0.217858
+iters 499, tarin loss: 0.218075
+iters 599, tarin loss: 0.217216
+iters 699, tarin loss: 0.216416
+iters 799, tarin loss: 0.216022
+Learning rate: 0.037284
+*****Test*****
+Train loss: 0.215789, Test loss: 0.218902
+=====================================Epoch 18========================================
+*****Train*****
+iters 99, tarin loss: 0.212873
+iters 199, tarin loss: 0.213471
+iters 299, tarin loss: 0.214942
+iters 399, tarin loss: 0.214997
+iters 499, tarin loss: 0.214376
+iters 599, tarin loss: 0.214040
+iters 699, tarin loss: 0.213070
+iters 799, tarin loss: 0.212787
+Learning rate: 0.036964
+*****Test*****
+Train loss: 0.212367, Test loss: 0.241775
+=====================================Epoch 19========================================
+*****Train*****
+iters 99, tarin loss: 0.209398
+iters 199, tarin loss: 0.208788
+iters 299, tarin loss: 0.209322
+iters 399, tarin loss: 0.209674
+iters 499, tarin loss: 0.210016
+iters 599, tarin loss: 0.209584
+iters 699, tarin loss: 0.209581
+iters 799, tarin loss: 0.209377
+Learning rate: 0.036628
+*****Test*****
+Train loss: 0.208963, Test loss: 0.214742
+=====================================Epoch 20========================================
+*****Train*****
+iters 99, tarin loss: 0.210651
+iters 199, tarin loss: 0.207217
+iters 299, tarin loss: 0.206414
+iters 399, tarin loss: 0.207440
+iters 499, tarin loss: 0.206725
+iters 599, tarin loss: 0.207701
+iters 699, tarin loss: 0.208383
+iters 799, tarin loss: 0.208266
+Learning rate: 0.036276
+*****Test*****
+Train loss: 0.207853, Test loss: 0.227616
+=====================================Epoch 21========================================
+*****Train*****
+iters 99, tarin loss: 0.212742
+iters 199, tarin loss: 0.211357
+iters 299, tarin loss: 0.212938
+iters 399, tarin loss: 0.212033
+iters 499, tarin loss: 0.212842
+iters 599, tarin loss: 0.211464
+iters 699, tarin loss: 0.210474
+iters 799, tarin loss: 0.209465
+Learning rate: 0.035908
+*****Test*****
+Train loss: 0.209313, Test loss: 0.216993
+=====================================Epoch 22========================================
+*****Train*****
+iters 99, tarin loss: 0.206406
+iters 199, tarin loss: 0.206964
+iters 299, tarin loss: 0.204670
+iters 399, tarin loss: 0.205007
+iters 499, tarin loss: 0.204865
+iters 599, tarin loss: 0.205666
+iters 699, tarin loss: 0.206120
+iters 799, tarin loss: 0.205386
+Learning rate: 0.035525
+*****Test*****
+Train loss: 0.205572, Test loss: 0.206602
+=====================================Epoch 23========================================
+*****Train*****
+iters 99, tarin loss: 0.206372
+iters 199, tarin loss: 0.205742
+iters 299, tarin loss: 0.205782
+iters 399, tarin loss: 0.204485
+iters 499, tarin loss: 0.204540
+iters 599, tarin loss: 0.204828
+iters 699, tarin loss: 0.205140
+iters 799, tarin loss: 0.205279
+Learning rate: 0.035127
+*****Test*****
+Train loss: 0.204985, Test loss: 0.212733
+=====================================Epoch 24========================================
+*****Train*****

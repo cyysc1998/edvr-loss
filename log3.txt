@@ -1,0 +1,157 @@
+nohup: ignoring input
+['/home/sunchao/test/ConsNet-modelnet/data/modelnet40_ply_hdf5_2048/ply_data_train1.h5', '/home/sunchao/test/ConsNet-modelnet/data/modelnet40_ply_hdf5_2048/ply_data_train4.h5', '/home/sunchao/test/ConsNet-modelnet/data/modelnet40_ply_hdf5_2048/ply_data_train0.h5', '/home/sunchao/test/ConsNet-modelnet/data/modelnet40_ply_hdf5_2048/ply_data_train3.h5', '/home/sunchao/test/ConsNet-modelnet/data/modelnet40_ply_hdf5_2048/ply_data_train2.h5']
+['/home/sunchao/test/ConsNet-modelnet/data/modelnet40_ply_hdf5_2048/ply_data_test1.h5', '/home/sunchao/test/ConsNet-modelnet/data/modelnet40_ply_hdf5_2048/ply_data_test0.h5']
+ConsNet(
+  (dgcnn): DGCNN(
+    (transform_net): Transform_Net(
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (bn3): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv1): Sequential(
+        (0): Conv2d(6, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.2)
+      )
+      (conv2): Sequential(
+        (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.2)
+      )
+      (conv3): Sequential(
+        (0): Conv1d(128, 1024, kernel_size=(1,), stride=(1,), bias=False)
+        (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.2)
+      )
+      (linear1): Linear(in_features=1024, out_features=512, bias=False)
+      (linear2): Linear(in_features=512, out_features=256, bias=False)
+      (bn4): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (transform): Linear(in_features=256, out_features=9, bias=True)
+    )
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (bn3): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (bn4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (bn5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (bn6): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (bn7): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (bn8): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (bn9): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (bn10): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv1): Sequential(
+      (0): Conv2d(6, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (conv2): Sequential(
+      (0): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (conv3): Sequential(
+      (0): Conv2d(128, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (conv4): Sequential(
+      (0): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (conv5): Sequential(
+      (0): Conv2d(128, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (conv6): Sequential(
+      (0): Conv1d(192, 1024, kernel_size=(1,), stride=(1,), bias=False)
+      (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (conv7): Sequential(
+      (0): Conv1d(16, 64, kernel_size=(1,), stride=(1,), bias=False)
+      (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+    (conv8): Sequential(
+      (0): Conv1d(1280, 256, kernel_size=(1,), stride=(1,), bias=False)
+      (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.2)
+    )
+  )
+  (decoder): DenseNet(
+    (model): Sequential(
+      (Denselayer0): _DenseLayer(
+        (norm1): AdaptiveInstanceNorm2d(256)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv1d(256, 512, kernel_size=(1,), stride=(1,), bias=False)
+        (norm2): AdaptiveInstanceNorm2d(512)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv1d(512, 128, kernel_size=(1,), stride=(1,), bias=False)
+      )
+      (Denselayer1): _DenseLayer(
+        (norm1): AdaptiveInstanceNorm2d(384)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv1d(384, 512, kernel_size=(1,), stride=(1,), bias=False)
+        (norm2): AdaptiveInstanceNorm2d(512)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv1d(512, 128, kernel_size=(1,), stride=(1,), bias=False)
+      )
+      (Denselayer2): _DenseLayer(
+        (norm1): AdaptiveInstanceNorm2d(512)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv1d(512, 512, kernel_size=(1,), stride=(1,), bias=False)
+        (norm2): AdaptiveInstanceNorm2d(512)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv1d(512, 128, kernel_size=(1,), stride=(1,), bias=False)
+      )
+    )
+  )
+  (mlp_w): MLP(
+    (model): Sequential(
+      (0): LinearBlock(
+        (fc): Linear(in_features=2048, out_features=256, bias=True)
+        (norm): InstanceNorm1d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+        (activation): ReLU(inplace=True)
+        (dp): Dropout(p=0.5, inplace=False)
+      )
+      (1): LinearBlock(
+        (fc): Linear(in_features=256, out_features=256, bias=True)
+        (norm): InstanceNorm1d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+        (activation): ReLU(inplace=True)
+        (dp): Dropout(p=0.5, inplace=False)
+      )
+      (2): LinearBlock(
+        (fc): Linear(in_features=256, out_features=2688, bias=True)
+        (dp): Dropout(p=0.5, inplace=False)
+      )
+    )
+  )
+  (mlp_b): MLP(
+    (model): Sequential(
+      (0): LinearBlock(
+        (fc): Linear(in_features=2048, out_features=256, bias=True)
+        (norm): InstanceNorm1d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+        (activation): ReLU(inplace=True)
+        (dp): Dropout(p=0.5, inplace=False)
+      )
+      (1): LinearBlock(
+        (fc): Linear(in_features=256, out_features=256, bias=True)
+        (norm): InstanceNorm1d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+        (activation): ReLU(inplace=True)
+        (dp): Dropout(p=0.5, inplace=False)
+      )
+      (2): LinearBlock(
+        (fc): Linear(in_features=256, out_features=2688, bias=True)
+        (dp): Dropout(p=0.5, inplace=False)
+      )
+    )
+  )
+  (conv): Conv1d(640, 3, kernel_size=(1,), stride=(1,))
+)
+Use SGD
+Use COS
+Use Chamfer Distance
+Experiment: exp_single_chamfer_0.0004
+Begin to train...
+=====================================Epoch 0========================================
+*****Train*****
